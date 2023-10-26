@@ -16,6 +16,7 @@ Then run the python script at the root directory:
 ```sh
 python app.py
 ```
+
 You can scan the QR code or go to the printed URL on your phone to upload photos directly to your computer.
 
 ## Automatically Download All Photos (iOS Only)

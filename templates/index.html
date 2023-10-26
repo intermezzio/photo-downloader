@@ -1,57 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>Upload Photos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .upload-box {
-            border: 2px dashed #ccc;
-            padding: 20px;
-            cursor: pointer;
-        }
-        .upload-box:hover {
-            border-color: #333;
-        }
-        .file-input {
-            display: none;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .upload-box {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        cursor: pointer;
+      }
+      .upload-box:hover {
+        border-color: #333;
+      }
+      .file-input {
+        display: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Upload Photos</h1>
     <label for="fileInput">
-        <div class="upload-box">
-            Click or drag photos here to upload<br>
-            (You can select multiple photos)
-            <input type="file" id="fileInput" class="file-input" name="file" accept="image/*" multiple>
-        </div>
+      <div class="upload-box">
+        Click or drag photos here to upload<br />
+        (You can select multiple photos)
+        <input
+          type="file"
+          id="fileInput"
+          class="file-input"
+          name="file"
+          accept="image/*"
+          multiple
+        />
+      </div>
     </label>
     <script>
-        document.getElementById('fileInput').addEventListener('change', function () {
-            const files = this.files;
-            if (files.length > 0) {
-                const formData = new FormData();
-                for (let i = 0; i < files.length; i++) {
-                    formData.append('file', files[i]);
-                }
-
-                fetch('/upload', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the response from the server, if needed
-                    console.log('Uploaded files:', data.uploaded_files);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function () {
+          const files = this.files;
+          if (files.length > 0) {
+            const formData = new FormData();
+            for (let i = 0; i < files.length; i++) {
+              formData.append("file", files[i]);
             }
+
+            fetch("/upload", {
+              method: "POST",
+              body: formData,
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                // Handle the response from the server, if needed
+                console.log("Uploaded files:", data.uploaded_files);
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          }
         });
     </script>
-</body>
+  </body>
 </html>
