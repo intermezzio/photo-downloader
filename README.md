@@ -25,4 +25,4 @@ The following iOS shortcut can be used to scan the QR code from the terminal and
 upload all photos in your camera roll directly to your computer. Scan the following QR code to install
 the shortcut on your phone:
 
-[https://www.icloud.com/shortcuts/d7222eeabf0c4905bdeef89526a7bceb](![IOS Shortcut](ios_shortcut_qr.gif))
+[![IOS Shortcut](ios_shortcut_qr.gif)](https://www.icloud.com/shortcuts/d7222eeabf0c4905bdeef89526a7bceb)
